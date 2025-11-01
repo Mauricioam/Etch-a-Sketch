@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 
-const createDivs = (res) => {
+const createDivs = () => {
+  let res = requestPrompt();
   let resolution = res * res;
   let boxSize = 400 / res;
 
@@ -8,8 +9,20 @@ const createDivs = (res) => {
     const cont = document.createElement("div");
     cont.style.width = `${boxSize}px`;
     cont.style.height = `${boxSize}px`;
-    cont.style.background = "blue";
     container.appendChild(cont);
+    cont.addEventListener("mouseenter", () => {
+      cont.style.background = "red";
+    });
   }
 };
-createDivs(16);
+
+const requestPrompt = () => {
+  let userInput = prompt("Enter a value", 16);
+  if (userInput >= 100) {
+    alert("Have to be below 100");
+    requestPrompt();
+  }
+  return userInput;
+};
+
+createDivs();

@@ -14,5 +14,5 @@ body {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid red;
+  border: 3px solid black;
 }
