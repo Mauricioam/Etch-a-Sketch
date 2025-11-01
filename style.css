@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+}
+.box {
+  background-color: rebeccapurple;
+  width: 25px;
+  height: 25px;
+}
