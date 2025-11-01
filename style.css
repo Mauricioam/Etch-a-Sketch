@@ -13,9 +13,6 @@ body {
   width: 400px;
   height: 400px;
   display: flex;
-}
-.box {
-  background-color: rebeccapurple;
-  width: 25px;
-  height: 25px;
+  flex-wrap: wrap;
+  border: 3px solid red;
 }

@@ -1,19 +1,15 @@
 const container = document.querySelector("#container");
-const secContainer = document.createElement("div");
-const thirContainer = document.createElement("div");
-const forthCont = document.createElement("div");
-let htmlString = "";
 
 const createDivs = (res) => {
-  for (let a = 0; a < 16; a++) {
-    const cont = document.createElement("div");
+  let resolution = res * res;
+  let boxSize = 400 / res;
 
-    for (let i = 0; i < res; i++) {
-      const newDiv = document.createElement("div");
-      newDiv.className = `box`;
-      cont.appendChild(newDiv);
-      container.appendChild(cont);
-    }
+  for (let a = 0; a < resolution; a++) {
+    const cont = document.createElement("div");
+    cont.style.width = `${boxSize}px`;
+    cont.style.height = `${boxSize}px`;
+    cont.style.background = "blue";
+    container.appendChild(cont);
   }
 };
 createDivs(16);
