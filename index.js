@@ -1,7 +1,22 @@
 const container = document.querySelector("#container");
+const resolutionBtn = document.querySelector("#change-resolution");
 
-const createDivs = () => {
-  let res = requestPrompt();
+const requestPrompt = () => {
+  let userInput = prompt("Enter a value", 16);
+  if (userInput >= 100 && userInput == 0) {
+    alert("Have to be below 100 and can't be zero");
+    requestPrompt();
+  }
+  createDivs(userInput);
+};
+
+resolutionBtn.addEventListener("click", requestPrompt);
+
+const createDivs = (resol) => {
+  if (!resol) {
+    resol = 16;
+  }
+  let res = resol;
   let resolution = res * res;
   let boxSize = 400 / res;
 
@@ -14,15 +29,6 @@ const createDivs = () => {
       cont.style.background = "red";
     });
   }
-};
-
-const requestPrompt = () => {
-  let userInput = prompt("Enter a value", 16);
-  if (userInput >= 100) {
-    alert("Have to be below 100");
-    requestPrompt();
-  }
-  return userInput;
 };
 
 createDivs();
