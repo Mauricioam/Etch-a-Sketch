@@ -10,7 +10,7 @@ const rmvContainer = (elem) => {
 const requestPrompt = () => {
   rmvContainer(container);
   let userInput = prompt("Enter a value", 16);
-  if (userInput >= 100 && userInput == 0) {
+  if (userInput >= 100 || userInput <= 0) {
     alert("Have to be below 100 and can't be zero");
     requestPrompt();
   }
